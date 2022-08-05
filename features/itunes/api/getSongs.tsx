@@ -4,7 +4,7 @@ export interface SongItem {
   artistName: string;
   trackName: string;
   trackId: number;
-  artistId:number;
+  artistId: number;
 }
 
 export type SongResponse = {

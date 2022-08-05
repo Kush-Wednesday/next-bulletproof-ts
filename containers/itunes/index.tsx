@@ -7,24 +7,13 @@ import { If } from "@common";
 export const ITunes = () => {
   const { Search } = Input;
   const [songName, setSongName] = useState("");
-  const [display, setDisplay] = useState<SongItem[]>([]);
-  const { data, error, isLoading, isFetching } = useFetchSongQuery("Better");
-
-  useEffect(() => {
-    console.log("hii", data);
-    if (data) {
-      setDisplay(data?.results);
-    }
-  }, [data]);
+  const { data, error, isLoading, isFetching } = useFetchSongQuery(songName, {
+    skip: !songName.trim(),
+  });
 
   const handleOnChange = debounce(rName => {
     setSongName(rName);
   }, 500);
-
-  if (error) {
-    // console.log(error);
-    return <div>Oops Error Occured</div>;
-  }
 
   return (
     <>
@@ -34,12 +23,11 @@ export const ITunes = () => {
         onSearch={searchText => handleOnChange(searchText)}
       />
 
+      {data?.results.map(item => (
+        <div key={item.trackId}>{item.trackName}</div>
+      ))}
+
     
-        {display.map(item => (
-          <div key={item.trackId}>{item.trackName}</div>
-        ))}
-      
-      {/* <p>{data.results}</p> */}
     </>
   );
 };
