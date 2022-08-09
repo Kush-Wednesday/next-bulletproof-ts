@@ -1,5 +1,5 @@
 import { colors } from "@themes";
-import { AlignCenter } from "common/styled";
+import { AlignCenter } from "@common/styled";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 

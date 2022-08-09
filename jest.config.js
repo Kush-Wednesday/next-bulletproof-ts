@@ -27,7 +27,7 @@ module.exports = {
     "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$": `<rootDir>/__mocks__/fileMock.js`,
     "^store(.*)": "<rootDir>/store/$1",
     "@styles(.*)": "<rootDir>/styles",
-    "common(.*)": "<rootDir>/common",
+    "^common(.*)": "<rootDir>/common",
     "@logger(.*)": "<rootDir>/logger",
     "@constants(.*)": "<rootDir>/constants",
     "services(.*)": "<rootDir>/services",

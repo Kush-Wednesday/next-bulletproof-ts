@@ -1,11 +1,13 @@
-import { Input } from "antd";
+import { Input ,Divider } from "antd";
 import { debounce } from "lodash-es";
 import { useState, useEffect } from "react";
 import { SongItem, SongResponse, useFetchSongQuery } from "@features/itunes/api/getSongs";
-import { If } from "@common";
+import { If, Container } from "@common";
+import { CustomSearch } from "@features/itunes/components";
+
 
 export const ITunes = () => {
-  const { Search } = Input;
+  
   const [songName, setSongName] = useState("");
   const { data, error, isLoading, isFetching } = useFetchSongQuery(songName, {
     skip: !songName.trim(),
@@ -17,18 +19,24 @@ export const ITunes = () => {
 
   return (
     <>
-      <Search
-        type="text"
-        onChange={evt => handleOnChange(evt.target.value)}
-        onSearch={searchText => handleOnChange(searchText)}
-      />
-
+    <Container
+      padding={20}
+      maxwidth={500}
+      style={{
+        height: "100vh",
+        alignSelf: "center",
+      }}
+    >
+      <CustomSearch handlechange={handleOnChange} />
+   
+      <Divider/>
       {data?.results.map(item => (
         <div key={item.trackId}>{item.trackName}</div>
       ))}
 
-    
+    </Container>
     </>
+    
   );
 };
 
