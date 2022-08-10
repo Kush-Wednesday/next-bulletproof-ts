@@ -7,7 +7,7 @@
 import React, { CSSProperties, memo } from "react";
 import styled, { FlattenSimpleInterpolation } from "styled-components";
 import { FormattedMessage } from "react-intl";
-import { If } from "@common";
+import If from "../If";
 import { fonts } from "@themes";
 
 interface Props {
