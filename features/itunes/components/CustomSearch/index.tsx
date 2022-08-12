@@ -15,7 +15,7 @@ const CustomSearch = ({ intl, handlechange }: CustomSearchProps) => {
   return (
     <CustomSearchStyle
       data-testid="search-box"
-      title={intl.formatMessage({ id: "Search Your Song", defaultMessage: "Search Your Song" })}
+      title={intl.formatMessage({ id: "search_song" })}
     >
       <Search
         type="text"

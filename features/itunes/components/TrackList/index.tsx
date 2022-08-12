@@ -13,8 +13,10 @@ import {
 import { RefObject, useEffect, useMemo, useRef, useState } from "react";
 import React from "react";
 import { iteratorSymbol } from "immer/dist/internal";
+import { injectIntl, IntlShape } from "react-intl";
 
 interface TrackListProps {
+  intl:IntlShape
   trackData?: SongResponse;
   loading: boolean;
   trackName: string;
@@ -31,6 +33,7 @@ const TrackList: React.FC<TrackListProps> = props => {
   const [currentTrack, setCurrentTrack] = useState("");
 
   const prevRef = useRef<HTMLAudioElement>(null);
+  const BlockText = props => <T display="block" {...props} />;
 
   const memoizedAudioRef = useMemo(() => {
     if (!results) return;
@@ -80,11 +83,10 @@ const TrackList: React.FC<TrackListProps> = props => {
             <Col key={index} xs={{ span: 24 }} lg={{ span: 6 }} sm={{ span: 12 }} md={{ span: 8 }}>
               <CustomTrackCard>
                 <AlbumArt src={item.artworkUrl100}></AlbumArt>
-                <TrackName>Track Name : {item.trackName}</TrackName>
-                <ArtistName>Artist : {item.artistName}</ArtistName>
-                <Duration>
-                  Duration : {Math.floor(item.trackTimeMillis / 60000)}:
-                  {Math.floor((item.trackTimeMillis / 1000) % 60)}s
+                <TrackName><BlockText id="track_name" values={{name :item.trackName}} /></TrackName>
+                <ArtistName><BlockText id="artist_name" values={{name :item.artistName}} /></ArtistName>
+                <Duration><BlockText id="duration"  />
+                   {Math.floor(item.trackTimeMillis / 60000)}:{Math.floor((item.trackTimeMillis / 1000) % 60)}s
                 </Duration>
                 {/* <AudioContainer> */}
                 <audio
@@ -109,4 +111,4 @@ const TrackList: React.FC<TrackListProps> = props => {
   );
 };
 
-export default TrackList;
+export default injectIntl(TrackList);

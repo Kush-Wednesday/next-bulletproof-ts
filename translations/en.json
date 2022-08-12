@@ -21,5 +21,9 @@
   "respo_search_default": "Search Default",
   "not_found": "No records found",
   "test": "test",
-  "offline_message": "You are Offline!"
+  "offline_message": "You are Offline!",
+  "search_song": "Search Your Song",
+  "track_name":"Track Name: {name}",
+  "artist_name":"Artist Name: {name}",
+  "duration":"Duration :"
 }
