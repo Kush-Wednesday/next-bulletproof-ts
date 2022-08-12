@@ -7,6 +7,7 @@ export interface SongItem {
   artistId: number;
   trackTimeMillis: number;
   artworkUrl100: string;
+  previewUrl: string;
 }
 
 export type SongResponse = {
