@@ -3,16 +3,16 @@ import { debounce } from "lodash-es";
 import { useState, useEffect } from "react";
 import { SongItem, SongResponse, useFetchSongQuery } from "@features/itunes/api/getSongs";
 import { If, Container } from "@common";
-import { CustomSearch } from "@features/itunes/components";
+import { CustomSearch ,TrackList } from "@features/itunes/components";
 
-
+// 
 export const ITunes = () => {
   
   const [songName, setSongName] = useState("");
   const { data, error, isLoading, isFetching } = useFetchSongQuery(songName, {
     skip: !songName.trim(),
   });
-
+  // console.log(data);
   const handleOnChange = debounce(rName => {
     setSongName(rName);
   }, 500);
@@ -30,9 +30,11 @@ export const ITunes = () => {
       <CustomSearch handlechange={handleOnChange} />
    
       <Divider/>
-      {data?.results.map(item => (
+      <TrackList trackData={data} trackName={"test"} loading={isLoading && isFetching} />
+
+      {/* {data?.results.map(item => (
         <div key={item.trackId}>{item.trackName}</div>
-      ))}
+      ))} */}
 
     </Container>
     </>

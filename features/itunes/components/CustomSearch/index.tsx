@@ -1,5 +1,5 @@
 import { Input } from "antd";
-import { CustomSearchStyle } from "@features/itunes/components/styled";
+import { CustomSearchStyle, Heading } from "@features/itunes/components/styled";
 import { injectIntl } from "react-intl";
 import { debounce } from "lodash";
 
@@ -13,7 +13,7 @@ const CustomSearch = ({ handlechange }: CustomSearchProps) => {
   const debouncedHandler = debounce(handlechange, 100);
   return (
     <CustomSearchStyle data-testid="search-box">
-      <h3>Search Your Song</h3>
+      <Heading>Search Your Song</Heading>
       <Search
         type="text"
         placeholder="Type here..."
