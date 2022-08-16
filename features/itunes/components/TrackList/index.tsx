@@ -1,4 +1,5 @@
 import get from "lodash/get";
+import { isUndefined } from "lodash";
 import { Skeleton, Row, Col, Button } from "antd";
 import { T, CustomCard, If } from "../../../../common";
 import { SongResponse, SongItem } from "../../api/getSongs";
@@ -76,7 +77,7 @@ const TrackList: React.FC<TrackListProps> = props => {
                 <CustomTrackCard data-testid="track-card">
                   <AlbumArt data-testid="album-art" src={item.artworkUrl100}></AlbumArt>
                   <TrackName>
-                    <BlockText id="track_name" values={{ name: item.trackName.substring(0, 10) }} />
+                    <BlockText id="track_name" values={{ name: !isUndefined(item.trackName) && item.trackName.substring(0, 10) }} />
                   </TrackName>
                   <ArtistName>
                     <BlockText
