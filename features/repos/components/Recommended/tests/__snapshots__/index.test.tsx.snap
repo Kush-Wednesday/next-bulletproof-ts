@@ -11,7 +11,7 @@ exports[`<Recommended /> should render and match the snapshot 1`] = `
         class="ant-col"
       >
         <span
-          class="ant-tag styled__ClickableTags-sc-15gkald-2 kHFdpo"
+          class="ant-tag styled__ClickableTags-sc-15gkald-2 cPcIBD"
         >
           test repo name
         </span>

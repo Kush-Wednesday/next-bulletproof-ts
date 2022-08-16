@@ -1,20 +1,21 @@
 import { Input } from "antd";
 import { CustomSearchStyle, Heading } from "@features/itunes/components/styled";
-import { injectIntl } from "react-intl";
+import { injectIntl, IntlShape } from "react-intl";
 import { debounce } from "lodash";
 
 export interface CustomSearchProps {
+  intl: IntlShape;
   handlechange: (searchText: string) => void;
 }
 
 const { Search } = Input;
 
-const CustomSearch = ({ handlechange }: CustomSearchProps) => {
+const CustomSearch = ({ intl, handlechange }: CustomSearchProps) => {
   const debouncedHandler = debounce(handlechange, 100);
   return (
-    <CustomSearchStyle data-testid="search-box">
-      <Heading>Search Your Song</Heading>
+    <CustomSearchStyle data-testid="search-box" title={intl.formatMessage({ id: "search_song" })}>
       <Search
+        data-testid="search-input"
         type="text"
         placeholder="Type here..."
         onChange={evt => handlechange(evt.target.value)}
@@ -24,4 +25,4 @@ const CustomSearch = ({ handlechange }: CustomSearchProps) => {
   );
 };
 
-export default CustomSearch;
+export default injectIntl(CustomSearch);

@@ -3,13 +3,10 @@ import { CustomCard } from "../../../../common";
 import { Card } from "antd";
 import { styles, colors, fonts } from "@themes";
 
-export const CustomSearchStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const CustomSearchStyle = styled(CustomCard)`
   margin: 20px 0px;
   max-width: 100%;
-  color: ${colors.primary};
+  background-color: ${colors.secondary};
 `;
 
 export const Heading = styled.h2`
@@ -18,33 +15,32 @@ export const Heading = styled.h2`
 `;
 export const CustomTrackCard = styled(CustomCard)`
   && {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: ${colors.secondary};
   }
 `;
 
 export const TrackName = styled.h3`
   ${fonts.weights.bold()};
-  color: ${colors.primary};
+  color: ${colors.textSecondary};
   margin: 0.5rem 0;
   grid-area: trackname;
 `;
 
-export const ArtistName = styled.h2`
+export const ArtistName = styled.h3`
   ${fonts.weights.bold()};
-  color: ${colors.primary};
+  color: ${colors.textSecondary};
   margin: 0.5rem 0;
   grid-area: artistname;
 `;
 
 export const AlbumArt = styled.img`
-  border-radius: 5%;
-  width: 50%;
-  height: 50%px;
+  width: 100%;
+  height: 100%;
   grid-area: albumart;
+  aspect-ratio: 2/1;
+  object-fit: contain;
 
-  @media (max-width: 300px) {
+  @media (max-width: 425px) {
     width: 100%;
     height: 100%;
   }
@@ -52,4 +48,12 @@ export const AlbumArt = styled.img`
 
 export const Duration = styled.p`
   grid-area: duration;
+`;
+
+export const AudioContainer = styled.div`
+  
+  // border: 1px solid red;
+  margin: 0.5rem auto;
+  background-color: ${props => (props.theme === "dark" ? "#222" : "#f5f5f5")};'
+
 `;
