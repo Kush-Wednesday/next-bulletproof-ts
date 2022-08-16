@@ -4,7 +4,7 @@ exports[`<CustomSearch /> should render and match the snapshot 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 styled__CustomSearchStyle-sc-14jlyoy-0 kmxBSK jMcALU"
+      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 styled__CustomSearchStyle-sc-14jlyoy-0 kmxBSK jLQjxT"
       data-testid="search-box"
     >
       <div
@@ -31,6 +31,7 @@ exports[`<CustomSearch /> should render and match the snapshot 1`] = `
           >
             <input
               class="ant-input"
+              data-testid="search-input"
               placeholder="Type here..."
               type="text"
               value=""

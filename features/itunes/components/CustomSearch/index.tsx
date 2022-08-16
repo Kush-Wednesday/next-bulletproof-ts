@@ -13,11 +13,9 @@ const { Search } = Input;
 const CustomSearch = ({ intl, handlechange }: CustomSearchProps) => {
   const debouncedHandler = debounce(handlechange, 100);
   return (
-    <CustomSearchStyle
-      data-testid="search-box"
-      title={intl.formatMessage({ id: "search_song" })}
-    >
+    <CustomSearchStyle data-testid="search-box" title={intl.formatMessage({ id: "search_song" })}>
       <Search
+        data-testid="search-input"
         type="text"
         placeholder="Type here..."
         onChange={evt => handlechange(evt.target.value)}
