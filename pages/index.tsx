@@ -1,8 +1,8 @@
-import { Repos } from "@features/repos";
+
 import { Itunes } from "@features/itunes";
-import React, { memo } from "react";
+import React from "react";
 import { injectIntl } from "react-intl";
-import { compose } from "redux";
+
 
 // export const ReposPage = ({ recommendations }) => {
 //   return <Repos recommendations={recommendations} />;

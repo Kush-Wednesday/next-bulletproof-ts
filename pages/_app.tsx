@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ErrorBoundary } from "@common";
+import { ErrorBoundary } from "../common";
 import Head from "next/head";
 import { IntlProvider } from "react-intl";
 import { Provider as ReduxProvider } from "react-redux";
