@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrackCard /> should match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 styled__CustomTrackCard-sc-14jlyoy-2 kmxBSK liLTAq"
+      data-testid="track-card"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <img
+          class="styled__AlbumArt-sc-14jlyoy-5 ivmedU"
+          data-testid="album-art"
+          src="https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/5a/47/6d/5a476ddd-4690-1297-1896-6a286a497a21/191404113974.png/100x100bb.jpg"
+        />
+        <h3
+          class="styled__TrackName-sc-14jlyoy-3 lowavE"
+        >
+          <p
+            class="T__StyledText-sc-apdcd0-0 fjJkvM"
+            data-testid="t"
+            display="block"
+          >
+            Track Name: Hello
+          </p>
+        </h3>
+        <h3
+          class="styled__ArtistName-sc-14jlyoy-4 iUIEPX"
+        >
+          <p
+            class="T__StyledText-sc-apdcd0-0 fjJkvM"
+            data-testid="t"
+            display="block"
+          >
+            Artist Name: Adele
+          </p>
+        </h3>
+        <p
+          class="styled__Duration-sc-14jlyoy-6 jcLzMV"
+        >
+          <p
+            class="T__StyledText-sc-apdcd0-0 fjJkvM"
+            data-testid="t"
+            display="block"
+          >
+            Duration :
+          </p>
+          4
+          :
+          55
+          s
+        </p>
+        <audio
+          controls=""
+          data-testid="audio-test"
+          id="22233223"
+          style="display: block; max-width: 100%;"
+        >
+          <source
+            src="22233223"
+            type="audio/mp3"
+          />
+          Your browser does not support audio tags
+        </audio>
+      </div>
+    </div>
+  </div>
+</body>
+`;
