@@ -33,7 +33,7 @@ export const ITunes: React.FC<ItunesContainerProps> = ({ intl }) => {
         }}
         color="#3120E0"
       >
-        <CustomSearch handlechange={handleOnChange} />
+        <CustomSearch data-testid="custom-search" handlechange={handleOnChange} />
 
         <Divider />
         <TrackList trackData={data} trackName={songName} loading={isLoading} />

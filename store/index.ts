@@ -13,7 +13,7 @@ export const store = configureStore({
     itunes: itunesReducer,
     [recommendationsApi.reducerPath]: recommendationsApi.reducer,
     [repoInfoApi.reducerPath]: repoInfoApi.reducer,
-    [itunesApi.reducerPath]: itunesApi.reducer,
+    [itunesApi?.reducerPath]: itunesApi?.reducer,
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middlewares),
 });
