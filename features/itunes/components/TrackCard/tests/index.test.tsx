@@ -52,5 +52,8 @@ describe("<TrackCard />", () => {
     expect(trackEventSpy).toBeCalled();
     expect(audioElement.id).toContain("22233223");
     expect(audioElement.controls).toBeTruthy();
+    fireEvent.pause(audioElement);
+    fireEvent.play(audioElement);
+    expect(trackEventSpy).toBeCalledTimes(2);
   });
 });
