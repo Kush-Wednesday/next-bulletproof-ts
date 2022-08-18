@@ -38,11 +38,9 @@ const TrackCard: React.FC<TrackCardProps> = props => {
           values={{ name: !isUndefined(result.trackName) && result.artistName.substring(0, 10) }}
         />
       </ArtistName>
-      <Duration>
         <BlockText id="duration" />
         {result.trackTimeMillis && Math.floor(result.trackTimeMillis / 60000)}:
         {result.trackTimeMillis && Math.floor((result.trackTimeMillis / 1000) % 60)}s
-      </Duration>
       <StyledAudio>
       <audio
         id={result.previewUrl}

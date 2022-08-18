@@ -15,7 +15,7 @@ exports[`<ErrorState /> should render and match the snapshot 1`] = `
           class="T__StyledText-sc-apdcd0-0 fjJkvM"
           data-testid="t"
         >
-          error
+          Error loading songs
         </p>
       </div>
     </div>

@@ -70,11 +70,6 @@ describe("<TrackCard />", () => {
     // expect(audioElemento.ariaLabel).toContain("audio-label");
   });
 
-  it("should check for debug",()=>{
-    const { debug }= render(<TrackCard {...trackCardProps} trackEventHandler={trackEventSpy} />
-    );
-    debug();
-  });
 
   it.skip("should check for  Artist name",() => {
     const { getAllByTestId } = render(

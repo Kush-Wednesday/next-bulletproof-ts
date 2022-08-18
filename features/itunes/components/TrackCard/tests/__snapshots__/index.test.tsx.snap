@@ -38,20 +38,16 @@ exports[`<TrackCard /> should match the snapshot 1`] = `
           </p>
         </h3>
         <p
-          class="styled__Duration-sc-14jlyoy-6 jcLzMV"
+          class="T__StyledText-sc-apdcd0-0 fjJkvM"
+          data-testid="t"
+          display="block"
         >
-          <p
-            class="T__StyledText-sc-apdcd0-0 fjJkvM"
-            data-testid="t"
-            display="block"
-          >
-            Duration :
-          </p>
-          4
-          :
-          55
-          s
+          Duration :
         </p>
+        4
+        :
+        55
+        s
         <div
           class="styled__StyledAudio-sc-14jlyoy-7 ggvosY"
         >
