@@ -47,6 +47,7 @@ const TrackCard: React.FC<TrackCardProps> = props => {
       <audio
         id={result.previewUrl}
         data-testid="audio-test"
+        aria-label="audio-label"
         autoPlay={false}
         controls
         onPlay={() => trackEventHandler(result.trackId)}

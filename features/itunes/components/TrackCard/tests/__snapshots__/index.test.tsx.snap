@@ -56,6 +56,7 @@ exports[`<TrackCard /> should match the snapshot 1`] = `
           class="styled__StyledAudio-sc-14jlyoy-7 ggvosY"
         >
           <audio
+            aria-label="audio-label"
             controls=""
             data-testid="audio-test"
             id="22233223"

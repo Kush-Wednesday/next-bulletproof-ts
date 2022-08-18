@@ -43,17 +43,37 @@ describe("<TrackCard />", () => {
   });
 
   it("should render audio element", async () => {
-    const { getAllByTestId, debug } = await render(
+    const { getAllByTestId, debug,getAllByLabelText } = await render(
       <TrackCard {...trackCardProps} trackEventHandler={trackEventSpy} />
     );
     const audioElement = getAllByTestId("audio-test")[0] as HTMLAudioElement;
+    // console.log(audioElement);
     fireEvent.play(audioElement);
+    
     expect(trackEventSpy).toBeCalled();
     expect(audioElement.id).toContain("22233223");
     expect(audioElement.controls).toBeTruthy();
     fireEvent.pause(audioElement);
     fireEvent.play(audioElement);
     expect(trackEventSpy).toBeCalledTimes(2);
+  });
+
+  it("should play the desired audio tag",()=>{
+    const { getAllByTestId, debug,getAllByLabelText } =  render(
+      <TrackCard {...trackCardProps} trackEventHandler={trackEventSpy} />
+    );
+    const audioElement = getAllByTestId("audio-test")[0] as HTMLAudioElement;
+    const audioElemento=getAllByLabelText("audio-label")[0];
+    fireEvent.play(audioElement);
+    expect(audioElemento.id).toContain("22233223");
+    expect(audioElemento).toBeTruthy();
+    // expect(audioElemento.ariaLabel).toContain("audio-label");
+  });
+
+  it("should check for debug",()=>{
+    const { debug }= render(<TrackCard {...trackCardProps} trackEventHandler={trackEventSpy} />
+    );
+    debug();
   });
 
   it.skip("should check for  Artist name",() => {
