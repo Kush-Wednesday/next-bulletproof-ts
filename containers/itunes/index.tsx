@@ -7,9 +7,23 @@ import { CustomSearch, TrackList } from "@features/itunes/components";
 import React from "react";
 import { IntlShape, injectIntl } from "react-intl";
 import { Interface } from "readline";
+import ErrorState from "@features/itunes/components/ErrorState";
 
 interface ItunesContainerProps {
   intl: IntlShape;
+}
+
+interface ITunesError {
+  status: number;
+  data: {
+    message: string;
+    documentationUrl: string;
+    errors: {
+      code: string;
+      field: string;
+      resource: string;
+    }[];
+  };
 }
 //
 export const ITunes: React.FC<ItunesContainerProps> = ({ intl }) => {
@@ -37,6 +51,11 @@ export const ITunes: React.FC<ItunesContainerProps> = ({ intl }) => {
 
         <Divider />
         <TrackList trackData={data} trackName={songName} loading={isLoading} />
+        <ErrorState
+          trackData={data}
+          loading={isLoading && isFetching}
+          tracksError={(error as ITunesError)?.data?.message}
+        />
       </Container>
     </>
   );

@@ -25,5 +25,6 @@
   "search_song": "Search Your Song",
   "track_name":"Track Name: {name}",
   "artist_name":"Artist Name: {name}",
-  "duration":"Duration :"
+  "duration":"Duration :",
+  "error":"Error loading songs"
 }
