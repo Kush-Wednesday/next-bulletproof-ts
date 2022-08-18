@@ -50,7 +50,6 @@ const TrackList: React.FC<TrackListProps> = props => {
     <div data-testid="track-list">
       <If condition={results.length !== 0}>
         <Skeleton loading={loading} active>
-          {resultCount !== 0 && <h2>{resultCount}</h2>}
           <Row>
             {results.map((item, index: number) => (
               <Col

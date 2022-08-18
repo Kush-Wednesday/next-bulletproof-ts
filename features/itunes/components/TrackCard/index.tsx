@@ -6,7 +6,7 @@ import {
   ArtistName,
   AlbumArt,
   Duration,
-  AudioContainer,
+  StyledAudio,
 } from "@features/itunes/components/styled";
 import { isUndefined } from "lodash";
 import { injectIntl, IntlShape } from "react-intl";
@@ -16,7 +16,7 @@ interface TrackCardProps {
   intl: IntlShape;
   result: SongItem;
   memoizedAudioRef;
-  trackEventHandler: (x: any) => void;
+  trackEventHandler;
 }
 
 const TrackCard: React.FC<TrackCardProps> = props => {
@@ -33,13 +33,17 @@ const TrackCard: React.FC<TrackCardProps> = props => {
         />
       </TrackName>
       <ArtistName>
-        <BlockText id="artist_name" values={{ name: result.artistName.substring(0, 10) }} />
+        <BlockText
+          id="artist_name"
+          values={{ name: !isUndefined(result.trackName) && result.artistName.substring(0, 10) }}
+        />
       </ArtistName>
       <Duration>
         <BlockText id="duration" />
-        {Math.floor(result.trackTimeMillis / 60000)}:
-        {Math.floor((result.trackTimeMillis / 1000) % 60)}s
+        {result.trackTimeMillis && Math.floor(result.trackTimeMillis / 60000)}:
+        {result.trackTimeMillis && Math.floor((result.trackTimeMillis / 1000) % 60)}s
       </Duration>
+      <StyledAudio>
       <audio
         id={result.previewUrl}
         data-testid="audio-test"
@@ -58,6 +62,7 @@ const TrackCard: React.FC<TrackCardProps> = props => {
         <source src={result.previewUrl} type="audio/mp3"></source>
         Your browser does not support audio tags
       </audio>
+      </StyledAudio>
     </CustomTrackCard>
   );
 };

@@ -52,18 +52,22 @@ exports[`<TrackCard /> should match the snapshot 1`] = `
           55
           s
         </p>
-        <audio
-          controls=""
-          data-testid="audio-test"
-          id="22233223"
-          style="display: block; max-width: 100%;"
+        <div
+          class="styled__StyledAudio-sc-14jlyoy-7 ggvosY"
         >
-          <source
-            src="22233223"
-            type="audio/mp3"
-          />
-          Your browser does not support audio tags
-        </audio>
+          <audio
+            controls=""
+            data-testid="audio-test"
+            id="22233223"
+            style="display: block; max-width: 100%;"
+          >
+            <source
+              src="22233223"
+              type="audio/mp3"
+            />
+            Your browser does not support audio tags
+          </audio>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorState /> should render and match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 hqWzjF"
+      color="red"
+      data-testid="error-state"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <p
+          class="T__StyledText-sc-apdcd0-0 fjJkvM"
+          data-testid="t"
+        >
+          error
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

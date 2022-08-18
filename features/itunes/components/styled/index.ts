@@ -50,9 +50,8 @@ export const Duration = styled.p`
   grid-area: duration;
 `;
 
-export const AudioContainer = styled.div`
+export const StyledAudio = styled.div`
   
-  // border: 1px solid red;
   margin: 0.5rem auto;
   background-color: ${props => (props.theme === "dark" ? "#222" : "#f5f5f5")};'
 
