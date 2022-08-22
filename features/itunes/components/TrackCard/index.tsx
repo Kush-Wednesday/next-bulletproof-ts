@@ -11,6 +11,7 @@ import {
 import { isUndefined } from "lodash";
 import { injectIntl, IntlShape } from "react-intl";
 import { T } from "../../../../common";
+import { useRouter } from "next/router";
 
 interface TrackCardProps {
   intl: IntlShape;
@@ -22,10 +23,15 @@ interface TrackCardProps {
 const TrackCard: React.FC<TrackCardProps> = props => {
   const { result, memoizedAudioRef, trackEventHandler } = props;
   const BlockText = props => <T display="block" {...props} />;
+  const router = useRouter();
 
   return (
     <CustomTrackCard data-testid="track-card">
-      <AlbumArt data-testid="album-art" src={result.artworkUrl100}></AlbumArt>
+      <AlbumArt
+        data-testid="album-art"
+        src={result.artworkUrl100}
+        onClick={() => router.push(`/trackDetails/${result.trackId}?song=${result.trackName}`)}
+      ></AlbumArt>
       <TrackName>
         <BlockText
           id="track_name"
@@ -38,29 +44,30 @@ const TrackCard: React.FC<TrackCardProps> = props => {
           values={{ name: !isUndefined(result.trackName) && result.artistName.substring(0, 10) }}
         />
       </ArtistName>
-        <BlockText id="duration" />
-        {result.trackTimeMillis && Math.floor(result.trackTimeMillis / 60000)}:
-        {result.trackTimeMillis && Math.floor((result.trackTimeMillis / 1000) % 60)}s
+      <BlockText id="duration" />
+      {result.trackTimeMillis && Math.floor(result.trackTimeMillis / 60000)}:
+      {result.trackTimeMillis && Math.floor((result.trackTimeMillis / 1000) % 60)}s
       <StyledAudio>
-      <audio
-        id={result.previewUrl}
-        data-testid="audio-test"
-        aria-label="audio-label"
-        autoPlay={false}
-        controls
-        onPlay={() => trackEventHandler(result.trackId)}
-        ref={memoizedAudioRef ? memoizedAudioRef?.[result.trackId] : null}
-        style={
-          {
-            display: "block",
-            width: "fit-content<100%>",
-            maxWidth: "100%",
-          } as React.CSSProperties
-        }
-      >
-        <source src={result.previewUrl} type="audio/mp3"></source>
-        Your browser does not support audio tags
-      </audio>
+        <audio
+          id={result.previewUrl}
+          data-testid="audio-test"
+          aria-label="audio-label"
+          autoPlay={false}
+          controls
+          onPlay={() => trackEventHandler(result.trackId)}
+          ref={memoizedAudioRef ? memoizedAudioRef?.[result.trackId] : null}
+          style={
+            {
+              display: "block",
+              width: "fit-content<100%>",
+              maxWidth: "100%",
+              color: "c9ada7",
+            } as React.CSSProperties
+          }
+        >
+          <source src={result.previewUrl} type="audio/mp3"></source>
+          Your browser does not support audio tags
+        </audio>
       </StyledAudio>
     </CustomTrackCard>
   );

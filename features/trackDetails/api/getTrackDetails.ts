@@ -1,28 +1,26 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { HYDRATE } from "next-redux-wrapper";
 
-export interface SongItem {
+export interface TrackItem {
   artistName: string;
+  collectionName: string;
   trackName: string;
-  trackId: number;
-  artistId: number;
-  trackTimeMillis: number;
+  collectionPrice: number;
+  trackPrice: number;
   artworkUrl100: string;
   previewUrl: string;
-  collectionName: string;
-  collectionPrice: number;
+  trackId: number;
   currency: string;
   releaseDate: string;
-  trackPrice: number;
 }
 
-export type SongResponse = {
+export type TrackDetail = {
   resultCount: number;
-  results: SongItem[];
+  results: TrackItem[];
 };
 
-export const itunesApi = createApi({
-  reducerPath: "itunesApi",
+export const trackDetailApi = createApi({
+  reducerPath: "trackDetailApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://itunes.apple.com/" }),
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === HYDRATE) {
@@ -30,10 +28,10 @@ export const itunesApi = createApi({
     }
   },
   endpoints: builder => ({
-    fetchSong: builder.query<SongResponse, string>({
-      query: name => `search?term=${name}`,
+    fetchTrackDetail: builder.query<TrackDetail, number>({
+      query: trackid => `lookup?id=${trackid}`,
     }),
   }),
 });
 
-export const { useFetchSongQuery } = itunesApi;
+export const { useFetchTrackDetailQuery } = trackDetailApi;

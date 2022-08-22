@@ -24,7 +24,14 @@
   "offline_message": "You are Offline!",
   "search_song": "Search Your Song",
   "track_name":"Track Name: {name}",
+  "artist_name_unavailable":"Artist name unavaiable", 
   "artist_name":"Artist Name: {name}",
   "duration":"Duration :",
-  "error":"Error loading songs"
+  "error":"Error loading songs",
+  "collection_price":"Collection Price : {collectionPrice} {currency}",
+  "collection_price_unavailable":"Collection Price unavailable",
+  "release_date_unavailable": "Release date unavaiable",
+  "release_date":"Release Date: {releaseDate}",
+  "collection_name_unavailable":"Collection name unavaiable",
+  "collection_name":"Collection Name : {collectionName} "
 }

@@ -1,0 +1,1 @@
+export {default as TrackDetails} from "@containers/TrackDetails";
