@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorState /> should match the snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="styled__AlignCenter-sc-15gkald-3 tOKel"
+    >
+      <div
+        class="ErrorState__Error-sc-14nnqu4-0 iiAFPa"
+      >
+        Sorry. Something went wrong! Please try again in sometime.
+      </div>
+    </div>
+  </div>
+</body>
+`;

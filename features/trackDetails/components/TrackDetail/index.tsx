@@ -1,4 +1,4 @@
-import { If, T, CustomCard } from "@app/common";
+import { If, T, CustomCard } from "../../../../common";
 import { Button, Card as AntDCard, Tag, Image } from "antd";
 import { isEmpty } from "lodash";
 import { useRouter } from "next/router";
@@ -101,6 +101,7 @@ const TrackDetail: React.FC<TrackDetailProps> = ({ intl, trackDetails }) => {
             otherwise={<T data-testid="artwork-unavailable" id="artwork_unavailable" />}
           >
             <Image
+              data-testid="album-art"
               style={{ paddingRight: "20px" }}
               height={200}
               src={artworkUrl100}

@@ -1,4 +1,4 @@
-import { T } from "@app/common";
+import { T } from "../../../../common";
 import { compose } from "@reduxjs/toolkit";
 import React from "react";
 import { injectIntl, IntlShape } from "react-intl";
