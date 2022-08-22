@@ -16,12 +16,13 @@ import { useRouter } from "next/router";
 interface TrackCardProps {
   intl: IntlShape;
   result: SongItem;
+  searchedTerm:string;
   memoizedAudioRef;
   trackEventHandler;
 }
 
 const TrackCard: React.FC<TrackCardProps> = props => {
-  const { result, memoizedAudioRef, trackEventHandler } = props;
+  const { result, memoizedAudioRef, trackEventHandler,searchedTerm } = props;
   const BlockText = props => <T display="block" {...props} />;
   const router = useRouter();
 
@@ -30,7 +31,7 @@ const TrackCard: React.FC<TrackCardProps> = props => {
       <AlbumArt
         data-testid="album-art"
         src={result.artworkUrl100}
-        onClick={() => router.push(`/trackDetails/${result.trackId}?song=${result.trackName}`)}
+        onClick={() => router.push(`/trackDetails/${result.trackId}?song=${searchedTerm}`)}
       ></AlbumArt>
       <TrackName>
         <BlockText

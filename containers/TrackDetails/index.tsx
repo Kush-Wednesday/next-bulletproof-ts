@@ -12,7 +12,7 @@ const TrackDetails: React.FC = () => {
   const [trackDetailsData, setTrackDetailsData] = useState<TrackItem>();
   const songName = router.query.song;
 
-  const { songDetailData } = useFetchSongQuery(router.query.song as string, {
+  const { songDetailData  } = useFetchSongQuery(router.query.song as string, {
     selectFromResult: ({ data }) => ({
       songDetailData: data?.results.find(songData => songData.trackId === slugTrackId),
     }),
@@ -31,7 +31,8 @@ const TrackDetails: React.FC = () => {
 
   if (isLoading) return <Loader />;
 
-  if (error || !trackDetailsData) return <TrackDetailError />;
+  if(!trackDetailsData)
+  if (error ||  !trackDetailsData) return <TrackDetailError />;
 
   return (
     <If condition={!isEmpty(trackDetailsData)} otherwise={<EmptyResult />}>
