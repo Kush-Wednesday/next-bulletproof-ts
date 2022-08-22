@@ -4,7 +4,7 @@ exports[`<CustomSearch /> should render and match the snapshot 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 styled__CustomSearchStyle-sc-14jlyoy-0 kmxBSK jLQjxT"
+      class="ant-card ant-card-bordered styled__CustomCard-sc-15gkald-1 styled__CustomSearchStyle-sc-14jlyoy-0 kmxBSK heYCYd"
       data-testid="search-box"
     >
       <div

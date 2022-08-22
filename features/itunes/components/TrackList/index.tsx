@@ -63,6 +63,7 @@ const TrackList: React.FC<TrackListProps> = props => {
                   result={item}
                   memoizedAudioRef={memoizedAudioRef}
                   trackEventHandler={trackEventHandler}
+                  searchedTerm={trackName}
                 />
               </Col>
             ))}

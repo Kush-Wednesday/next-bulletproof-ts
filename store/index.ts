@@ -6,6 +6,7 @@ import { recommendationsApi } from "@features/repos/api/getRecommendations";
 import { repoInfoApi } from "@features/info/api/getRepoInfo";
 import { itunesApi } from "@features/itunes/api/getSongs";
 import middlewares from "./middlewares";
+import { trackDetailApi } from "@features/trackDetails/api/getTrackDetails";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     [recommendationsApi.reducerPath]: recommendationsApi.reducer,
     [repoInfoApi.reducerPath]: repoInfoApi.reducer,
     [itunesApi?.reducerPath]: itunesApi?.reducer,
+    [trackDetailApi.reducerPath]: trackDetailApi.reducer,
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middlewares),
 });

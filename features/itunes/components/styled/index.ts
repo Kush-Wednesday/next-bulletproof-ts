@@ -7,6 +7,7 @@ export const CustomSearchStyle = styled(CustomCard)`
   margin: 20px 0px;
   max-width: 100%;
   background-color: ${colors.secondary};
+  border-color: #000000;
 `;
 
 export const Heading = styled.h2`
@@ -16,6 +17,7 @@ export const Heading = styled.h2`
 export const CustomTrackCard = styled(CustomCard)`
   && {
     background-color: ${colors.secondary};
+    border-color: #000000;
   }
 `;
 
